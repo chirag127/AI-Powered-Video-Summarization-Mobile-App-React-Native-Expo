@@ -1,68 +1,78 @@
-# PR Title Convention
+# Pull Request Template: Apex Velocity Review
 
-Use Conventional Commits: `type(scope): subject`
+## 1. Core Commit Identification
 
-**Examples:**
-*   `feat(auth): implement biometric login using local storage`
-*   `fix(parser): resolve edge case for empty video titles`
-*   `refactor(ui): standardize all button styles to Tailwind utility class v4`
+<!-- **Crucial:** Use Conventional Commits format for the title. -->
 
----
+**Type:** `feat` | `fix` | `chore` | `docs` | `refactor` | `test` | `style`
+**Scope:** (e.g., `api`, `ui`, `parser`)
+**Subject:** Concise summary of the change (max 50 chars).
 
-## 🚀 Feature/Fix Overview
-
-**BLUF (Bottom Line Up Front):** Summarize the core purpose of this PR in one sentence. What does this change achieve?
-
-<!-- Briefly describe the motivation and context. Why is this change necessary? -->
+**Example Title:** `feat(video-processor): Implement exponential backoff for cloud API calls`
 
 ---
 
-## ✅ Checklist: The Apex Gate
+## 2. Feature/Fix Context & Value Proposition
 
-Ensure all mandatory architecture and quality gates have been passed before requesting review.
+### BLUF (Bottom Line Up Front)
+*What critical problem does this solve or feature does this introduce? (One sentence)*
 
-### Code Quality & Architecture
-- [ ] **SOLID Principles:** Adherence checked (SRP enforced for new modules).
-- [ ] **CQS Enforced:** Commands only mutate state; Queries only return data.
-- [ ] **DRY/KISS:** Logic is not duplicated and complexity is minimal.
-- [ ] **Input Sanitization:** All external inputs (API, user, config) are validated/sanitized.
-- [ ] **Error Handling:** Critical paths use `try/catch/finally` or appropriate Rust/Go error handling.
+[Describe the intent here]
 
-### Testing & Verification
-- [ ] **Unit Tests:** Added/Updated tests in `tests/` corresponding to all logic changes.
-- [ ] **Coverage:** Target coverage is maintained or improved (minimum 85%).
-- [ ] **E2E Test Snippet:** (If UI/Flow change) A brief description of the manual E2E steps required for verification.
-- [ ] **Linting:** `biome check --apply` passed successfully locally.
+### Details
+<!-- Explain the 'Why' behind this PR. Link to any related issues using `Closes #XXX` -->
 
-### Documentation & Metadata
-- [ ] **README.md:** Updated if new features, dependencies, or architectural shifts occurred.
-- [ ] **AGENTS.md:** Updated if core language stack changed (Not applicable for minor fixes).
-- [ ] **Dependencies:** New packages added or updated are reviewed for security and performance.
+- [ ] This PR addresses a critical bug.
+- [ ] This PR introduces a new feature based on specification X.
+- [ ] This PR is a refactor/cleanup conforming to Apex Standards.
+
+**Related Issues:** (e.g., `Closes #42`, `Relates to #101`)
 
 ---
 
-## 🧠 Detailed Changes (Structured Log)
+## 3. Architectural Impact & Verification
 
-Use this section to detail the technical implementation, architectural choices, and dependency impact.
+### Architectural Pattern Adherence
+*(Self-Audit against SOLID, CQS, and 12-Factor principles)*
 
-### 1. Architectural Decisions
+- [ ] **SOLID:** Does this change violate any SOLID principles? (If yes, specify where and why it was deemed necessary for this context.)
+- [ ] **CQS:** Are all new/modified functions strictly Commands or Queries? (No side effects in Queries.)
+- [ ] **Immutability:** Are state changes handled via immutable updates where applicable (especially React state/props)?
 
-<!-- e.g., Switched from Redux to Zustand Signals for global state management in the Auth feature due to performance bottlenecks. -->
+### Testing Strategy & Coverage
+<!-- Link to associated test files or describe new test scenarios added. -->
 
-### 2. Dependencies Impact
+- [ ] **Unit Tests Added/Updated:** (Vitest/Jest)
+- [ ] **E2E Tests Added/Updated:** (Playwright)
+- [ ] **Test Coverage Impact:** (e.g., Increased from 85% to 91%)
 
-<!-- List any new packages or major version bumps affecting the ecosystem (e.g., React Native 0.74 -> 0.75). -->
-
-### 3. Testing Strategy
-
-<!-- Specific mocks used, isolated test setup, or integration points tested. -->
+**Verification Steps:**
+1. Perform step A...
+2. Observe result B...
+3. Verify endpoint C...
 
 ---
 
-## ⚙️ Reviewer Instructions
+## 4. Project Environment & Tooling Updates (Apex Mandate)
 
-1.  **Focus Area:** Please prioritize reviewing the logic within `src/features/[module]/...`.
-2.  **Performance Check:** Verify that the new UI elements maintain an INP score below 200ms.
-3.  **Security:** Pay close attention to data serialization/deserialization around the summarization API calls.
+*(Check if this PR required updates to linting, dependencies, or CI/CD.)*
 
-**Thank you for enforcing the Zero-Defect standard.**
+- [ ] **Biome/Ruff Config Updated:** (If configuration files changed)
+- [ ] **Dependencies Updated:** (Check `package.json` - Specify major changes)
+- [ ] **CI/CD Workflow Changed:** (Check `.github/workflows/` changes)
+- [ ] **Documentation Updated:** (`README.md`, `AGENTS.md`, etc.)
+
+---
+
+## 5. Reviewer Checklist (For Reviewer)
+
+This section is for the reviewer to mark completion.
+
+- [ ] **Architectural Alignment:** Does this fit the React Native/Expo FSD structure?
+- [ ] **Security Audit:** Input sanitization reviewed (especially video input handling)?
+- [ ] **Performance:** Checked for synchronous blocking operations on the JS thread?
+- [ ] **Code Hygiene:** Naming conventions and verticality optimized?
+- [ ] **Linter Green:** `biome check --error-on-warnings` passed locally.
+- [ ] **Tests Pass:** `npm run test` passed locally.
+
+**LGTM ✅** (Looks Good To Me) if all checks pass.
