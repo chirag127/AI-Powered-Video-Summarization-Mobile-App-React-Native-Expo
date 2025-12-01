@@ -1,68 +1,56 @@
-# 🛡️ VideoSum-AI-Powered-Video-Summarization-Mobile-Platform Security Policy
+# 🛡️ Security Policy: VideoSum AI Platform
 
-At VideoSum, the security of our users' data and the integrity of our platform are paramount. We are committed to developing and maintaining a secure, privacy-respecting, and robust mobile application that leverages cutting-edge AI for video summarization. This document outlines our security policy and guidelines for reporting vulnerabilities.
+As the Apex Technical Authority, we treat security as a **Tier 0 Priority**. This repository adheres to a **Zero-Trust, Fail-Fast** methodology, integrating DevSecOps principles directly into the development lifecycle, aligning with the latest 2025/2026 security standards.
 
-## Reporting a Vulnerability
+## 1. Reporting Vulnerabilities
 
-We genuinely appreciate the efforts of security researchers and the community in helping us maintain a secure platform. If you discover a security vulnerability within VideoSum, we urge you to report it to us immediately and responsibly.
+We rely on our community to help us maintain the integrity of the VideoSum Platform. If you discover a security vulnerability, **DO NOT** open a public issue. Please follow these steps immediately:
 
-### How to Report
+1.  **DO NOT** disclose the vulnerability publicly (e.g., commit, fork, public issue).
+2.  Email the details to our dedicated security team: `security@videosum.tech`.
+3.  Ensure your report includes:
+    *   A clear description of the vulnerability.
+    *   Steps to reproduce (Proof of Concept).
+    *   Affected component/file paths.
+    *   Suggested remediation, if known.
 
-To report a security vulnerability, please send a detailed email to our dedicated security team:
+We commit to acknowledging your report within **48 hours** and will work diligently to deploy a fix.
 
-📧 **security@videosum.com**
+## 2. Security Scanning & Automation
 
-### What to Include in Your Report:
+This repository enforces automated security checks across all CI/CD pipelines:
 
-When submitting a vulnerability report, please provide as much detail as possible to help us quickly understand and remediate the issue:
+*   **Dependency Auditing:** We use modern tools integrated into our GitHub Actions workflow (`ci.yml`) to scan for known CVEs in all `package.json` dependencies (`npm audit` equivalent, enforced by `uv` tooling in related components).
+*   **Static Analysis Security Testing (SAST):** All new code is analyzed by language-specific linters (Biome, Ruff) which check for common pitfalls like unsafe string interpolation, improper input validation, and insecure module usage.
+*   **Software Bill of Materials (SBOM):** A complete SBOM is generated for every release artifact, providing full transparency into the software supply chain.
 
-*   **Clear Description:** A concise explanation of the vulnerability.
-*   **Steps to Reproduce:** Detailed, step-by-step instructions on how to reproduce the vulnerability.
-*   **Affected Version(s):** The specific version(s) of VideoSum you tested.
-*   **Impact:** Describe the potential impact of the vulnerability (e.g., data breach, unauthorized access, denial of service).
-*   **Proof of Concept (Optional but Recommended):** Any code, screenshots, or videos demonstrating the vulnerability.
-*   **Your Contact Information:** (Optional) If you wish to be credited, please provide your name/handle.
+## 3. OWASP Top 10 (2025 Focus) Mitigation
 
-### Our Commitment to Responsible Disclosure:
+Given that VideoSum interacts with mobile clients (React Native/Expo) and communicates with external ML/AI APIs, we focus rigorously on the following key vectors:
 
-Upon receiving your report, our security team will:
+| Vector | Mitigation Strategy |
+| :--- | :--- |
+| **Injection (A01)** | Strict input sanitization on **ALL** API gateways and environment variable usage. Utilize parameterized queries/safe serialization mechanisms. |
+| **Broken Access Control (A04)** | Implement role-based access control (RBAC) on all backend endpoints. Ensure client-side checks are **NEVER** the final authority. |
+| **Cryptographic Failures (A02)** | All data in transit uses mandatory **TLS 1.3**. Sensitive metadata at rest is encrypted using industry-standard AES-256 encryption keys managed via secure vaults (Vault/AWS Secrets Manager equivalents). |
+| **Security Misconfiguration (A05)** | Strict use of Expo's managed workflow security settings and rigorous configuration checking via infrastructure-as-code practices where applicable. |
+| **Server-Side Request Forgery (SSRF)** | All external network calls originating from our cloud components are strictly whitelisted to known endpoints only. |
 
-1.  **Acknowledge:** We will acknowledge receipt of your report within 2 business days.
-2.  **Investigate:** We will thoroughly investigate the reported vulnerability.
-3.  **Remediate:** We will work diligently to fix the vulnerability in a timely manner.
-4.  **Communicate:** We will keep you informed of our progress and resolution plan.
-5.  **Credit:** With your permission, we will publicly credit you in our release notes or security advisory for your responsible disclosure.
+## 4. Development Security Standards
 
-We kindly request that you **do not disclose the vulnerability publicly** until we have had sufficient time to address it. Public disclosure without prior coordination can put our users at risk.
+All developers contributing to this project must adhere to these principles:
 
-## Security Best Practices for Contributors
+*   **Never Commit Secrets:** API keys, tokens, or credentials must **NEVER** appear in the source code. Configuration must be injected via Environment Variables only (12-Factor App Principle).
+*   **Principle of Least Privilege:** Code components are granted only the minimum permissions necessary to perform their designated function.
+*   **Immutability:** Prefer immutable data structures to prevent unintended side effects that can lead to subtle security vulnerabilities.
 
-All contributors to VideoSum are expected to adhere to the following security best practices:
+## 5. Responsible Disclosure Timeline
 
-*   **Input Validation & Sanitization:** All user inputs must be rigorously validated and sanitized to prevent common attacks like XSS, SQL injection, and command injection.
-*   **Principle of Least Privilege:** Components and services should operate with the minimum necessary permissions to perform their function.
-*   **Secure Dependencies:** Regularly update third-party libraries and frameworks, and audit them for known vulnerabilities.
-*   **Secure Error Handling:** Avoid exposing sensitive system information in error messages. Implement robust `try-catch-finally` blocks to ensure application resilience.
-*   **Code Reviews:** All code changes should undergo thorough security-focused code reviews.
-*   **Data Protection:** Implement encryption for sensitive data at rest and in transit. Ensure compliance with data privacy regulations (e.g., GDPR, CCPA).
-*   **API Security:** Design and implement APIs with strong authentication, authorization, and rate-limiting mechanisms.
-*   **Mobile Security:** Adhere to OWASP Mobile Top 10 guidelines, ensure secure data storage on devices, and protect against reverse engineering attempts.
-*   **AI Model Security:** Validate inputs and outputs of AI models, protect against model inversion attacks, and ensure the integrity of the AI pipeline.
+Upon receiving a valid report, we adhere to the following internal timeline:
 
-## PGP Key for Secure Communication (Optional)
+*   **T + 0 Hours:** Acknowledge receipt.
+*   **T + 24 Hours:** Triage severity and assign engineering resources.
+*   **T + 72 Hours:** Deploy hotfix to staging environment.
+*   **T + 5 Days (Max):** Deploy fix to production (or negotiate extended timeline with the reporter for complex issues).
 
-For enhanced security when communicating sensitive information, you may encrypt your reports using our PGP key. Please request our current PGP public key by sending an initial, non-sensitive email to `security@videosum.com`.
-
-## Supported Versions
-
-We only provide security updates for the **latest stable major version** of VideoSum.
-
-*   **Latest Stable Major Version:** `v1.x.x` (Please refer to the latest release for the exact version number).
-
-If you find a vulnerability in an older, unsupported version, we encourage you to upgrade to the latest version and re-test. While we appreciate reports on older versions, our immediate focus will always be on the most current stable release.
-
-## License
-
-This project is licensed under the [CC BY-NC License](LICENSE).
-
-Thank you for helping us keep VideoSum secure!
+This policy is reviewed and updated annually, or upon significant changes to our threat model.
