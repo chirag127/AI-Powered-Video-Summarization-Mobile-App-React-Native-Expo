@@ -1,80 +1,91 @@
 ---
-name: "🐞 Bug Report: Apex-Tier Defect"
-about: "Report a critical defect or unexpected behavior in VideoSum that requires immediate attention."
-title: "[BUG]: <Concise description of the issue>"
-labels: ["bug", "triage", "priority:medium"]
-assignees: []
----
+name: Bug Report
+about: Report a bug or unexpected behavior
+title: "[Bug] - Concise Summary of Issue"
+labels: bug, triage
+assignees: ""
 
-Thank you for taking the time to report this issue in VideoSum-AI-Powered-Video-Summarization-Mobile-Platform. Your diligence helps us maintain a zero-defect standard.
+# 🐛 Bug Report
 
-Please ensure you've performed these critical checks before submitting:
+Thank you for taking the time to report a bug. Your detailed report helps us improve the VideoSum platform for everyone.
 
-- [ ] I have searched the existing [issues](https://github.com/VideoSum-AI-Powered-Video-Summarization-Mobile-Platform/issues) to ensure this bug has not already been reported.
-- [ ] I have updated to the latest version of the VideoSum application to confirm the bug persists.
-- [ ] I have cleared the application cache and restarted the app.
-- [ ] I am able to consistently reproduce this issue.
-- [ ] This report includes all necessary details, including environment specifics and reproduction steps.
+Please provide as much information as possible to help us diagnose and fix the issue.
 
----
+## 🎯 Problem Description
 
-### 📝 Description
+A clear and concise description of what the bug is. What did you expect to happen and what actually happened?
 
-A clear and concise description of the bug. What is the core problem? When does it typically occur? Why is it a defect?
+## 🔎 Steps to Reproduce
 
----
+Provide a step-by-step guide on how to reproduce the bug. The more detailed, the better.
 
-### 🪜 Steps to Reproduce
+1. Go to the `[Relevant Section/Screen]`
+2. Perform `[Action A]`
+3. Perform `[Action B]`
+4. Observe `[The Unexpected Behavior]`
 
-Provide precise, step-by-step instructions to reproduce the issue. Be as granular as possible. If applicable, provide a sample video URL or text that triggers the bug.
+## 💡 Expected Behavior
 
-1.  Go to '...'
-2.  Click on '....'
-3.  Scroll down to '....'
-4.  See error / unexpected behavior
+What you expected to happen.
 
----
+## 📸 Screenshots/Videos (Optional)
 
-### ✅ Expected Behavior
+If possible, add screenshots or short videos to help explain your problem.
 
-Describe what you expected to happen without the bug. What is the desired, correct outcome?
+## 📱 Device & OS Information
 
----
+*   **Platform:** (e.g., iOS, Android)
+*   **OS Version:** (e.g., iOS 17.2, Android 14)
+*   **App Version:** (e.g., 1.0.0 - can usually be found in Settings)
+*   **Device Model:** (e.g., iPhone 15 Pro, Samsung Galaxy S24 Ultra)
 
-### ❌ Actual Behavior
+## ⚙️ Environment Details (Optional)
 
-Describe what actually happened, including any error messages displayed, UI glitches, or incorrect data. Attach screenshots or screen recordings if they help illustrate the problem.
+Any other relevant context about your environment, such as network conditions, specific video file types, etc.
 
----
+## 🔗 Additional Information (Optional)
 
-### 🖥️ Environment
+*   **Log Files:** If you can access and attach relevant log files, it would be highly beneficial.
+*   **Crash Reports:** If the issue leads to a crash, please attach any generated crash reports.
+*   **Workaround:** Is there any temporary workaround you found?
 
-Please provide the following details about your environment:
+## 🤖 AI Agent Directives (Internal Use Only)
 
--   **Device Model:** (e.g., iPhone 15 Pro, Samsung Galaxy S24 Ultra, Pixel 8)
--   **Operating System:** (e.g., iOS 17.5.1, Android 14)
--   **VideoSum App Version:** (Found in 'Settings' -> 'About')
--   **AI Model/API Used (if applicable):** (e.g., Gemini-3-Pro, custom backend)
--   **Internet Connection Type:** (e.g., Wi-Fi, 5G, LTE)
--   **Any proxy/VPN in use:** (Yes/No)
+This section is for internal tracking and analysis by AI agents. Please do not modify.
 
----
+```yaml
+project_context:
+  repository_name: "VideoSum-AI-Powered-Video-Summarization-Mobile-Platform"
+  language: "JavaScript"
+  framework: "React Native"
+  platform: "Mobile (iOS/Android)"
+  core_tech:
+    - "React Native"
+    - "Expo"
+    - "TypeScript"
+    - "AI/ML (for summarization)"
+  architecture:
+    - "Modular Monolith / Microservices (Potential for backend scaling)"
+  key_libraries:
+    - "@react-native-async-storage/async-storage"
+    - "react-navigation/native"
+    - "expo-camera"
+    - "expo-av"
+    - "expo-file-system"
+    - "openai-api-node" # Example, actual API client will vary
 
-### 🧩 Additional Context
-
-Add any other context about the problem here. This could include:
-
--   Screenshots or screen recordings (highly recommended for UI/UX bugs).
--   Console logs or crash reports (if accessible).
--   Network request/response details that might be relevant.
--   Any workarounds you've discovered.
--   Frequency of the bug (e.g., always, sometimes, rarely).
-
----
-
-### 🚀 Severity (Select One)
-
--   [ ] **Critical:** Application is completely unusable, data loss, security vulnerability, production down.
--   [ ] **High:** Major functionality is broken, significant user impact, no easy workaround.
--   [ ] **Medium:** Minor functionality issues, noticeable user impact, a workaround exists.
--   [ ] **Low:** Cosmetic issues, minor inconvenience, minimal user impact.
+agent_directives:
+  task_id: "ISSUE_TEMPLATE_BUG_REPORT_GENERATION"
+  current_timestamp: "2025-12-20T10:30:00Z"
+  analysis_model: "gemini-3-pro-preview"
+  code_quality_standard: "FAANG-Level Zero-Defect"
+  security_mandate: "OWASP Top 10 2025 Compliance, Zero Trust Input Validation"
+  testing_strategy: "Comprehensive (Unit, Integration, E2E), 1:1 Source-to-Test Mapping, F.I.R.S.T. Principles"
+  documentation_standard: "Hero-Tier README, AI Replication Block, Live Badges"
+  devsecops_checklist:
+    - "Dependency Audit"
+    - "SBOM Generation"
+    - "Input Sanitization (All User/External Input)"
+    - "Fail Fast on Invalid State"
+    - "Secure Data Storage/Transit"
+```
