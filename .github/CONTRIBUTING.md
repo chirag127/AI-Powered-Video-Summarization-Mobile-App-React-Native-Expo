@@ -1,111 +1,115 @@
-# Contributing to VideoSum-AI-Powered-Video-Summarization-Mobile-Platform
+# Contributing to VideoSum-AI-Video-Summarizer-Mobile-App
 
-## Welcome!
+Thank you for your interest in contributing to VideoSum-AI-Video-Summarizer-Mobile-App! We welcome your contributions to help us improve this AI-powered mobile application.
 
-Thank you for considering contributing to VideoSum-AI-Powered-Video-Summarization-Mobile-Platform! We appreciate your willingness to help improve our project. This guide outlines the best practices and procedures for making contributions.
+## 1. Code of Conduct
 
-## Our Philosophy
+This project adheres to the Contributor Covenant Code of Conduct. By participating, you are expected to uphold this code. Please report unacceptable behavior to `chirag127@example.com`.
 
-We adhere to the principles of **Zero-Defect, High-Velocity, Future-Proof** development. This means we strive for robust, well-tested code delivered efficiently, with an eye towards long-term maintainability and adaptability.
+## 2. How to Contribute
 
-## Getting Started
+We welcome contributions in the form of bug reports, feature requests, code improvements, and documentation updates.
 
-### 1. Fork the Repository
+### 2.1 Reporting Bugs
 
-Start by forking the official repository:
+When reporting a bug, please provide as much detail as possible:
 
-`git clone https://github.com/chirag127/VideoSum-AI-Powered-Video-Summarization-Mobile-Platform.git`
+*   **Version:** The version of the app you are using.
+*   **Device & OS:** Your device model and operating system version (e.g., iPhone 14 Pro, iOS 17.2; Samsung Galaxy S23, Android 14).
+*   **Steps to Reproduce:** Clear, concise steps to reproduce the problem.
+*   **Expected Behavior:** What you expected to happen.
+*   **Actual Behavior:** What actually happened.
+*   **Screenshots/Videos:** If applicable, attach screenshots or screen recordings.
+*   **Logs:** Any relevant error messages or console logs.
 
-### 2. Setup Development Environment
+Use the provided issue templates for bug reports.
 
-This project uses React Native with Expo. Please ensure you have the necessary development tools installed:
+### 2.2 Suggesting Enhancements
 
-*   [Node.js](https://nodejs.org/)
-*   [npm](https://www.npmjs.com/)
-*   [Expo CLI](https://docs.expo.dev/get-started/installation/)
+If you have an idea for a new feature or an improvement, please:
 
-Install project dependencies:
+1.  **Check Existing Issues:** See if a similar feature request already exists.
+2.  **Open a New Issue:** If not, create a new issue describing your suggestion. Be specific about the problem it solves and the proposed solution.
 
-bash
-npm install
+### 2.3 Contributing Code
 
+We appreciate code contributions! Here's the general workflow:
 
-### 3. Run the Application
-
-Start the development server:
-
-bash
-npx expo start
-
-
-This will launch the Expo Go app on your device or simulator, allowing you to see your changes in real-time.
-
-## Contribution Workflow
-
-1.  **Create a Branch:** Always branch off the `main` branch for your contributions:
+1.  **Fork the Repository:** Create a fork of `https://github.com/chirag127/VideoSum-AI-Video-Summarizer-Mobile-App`.
+2.  **Clone Your Fork:** Clone your forked repository to your local machine:
     bash
-git checkout -b feature/your-feature-name
+    git clone https://github.com/chirag127/VideoSum-AI-Video-Summarizer-Mobile-App.git
+    cd VideoSum-AI-Video-Summarizer-Mobile-App
+    
+3.  **Set Up Development Environment:**
+    *   Ensure you have Node.js and Expo CLI installed.
+    *   Install dependencies:
+        bash
+        npm install
+        
+    *   Refer to the `README.md` for detailed setup instructions and available scripts.
 
-    or for bug fixes:
+4.  **Create a New Branch:** Create a descriptive branch for your changes:
     bash
-git checkout -b bugfix/your-bug-fix-name
+    git checkout -b feat/your-feature-name
+    # or
+    git checkout -b fix/your-bug-fix
+    
 
+5.  **Make Your Changes:** Implement your feature or fix.
 
-2.  **Make Your Changes:** Implement your feature or fix. Ensure your code adheres to the project's coding standards.
-
-3.  **Test Your Changes:** Write and run tests to ensure your changes haven't introduced regressions. We use **Vitest** for unit tests and **Playwright** for E2E tests.
+6.  **Test Your Changes:** Ensure all tests pass. Run the full test suite using:
     bash
-npm run test
-
-
-4.  **Lint Your Code:** Ensure your code is formatted correctly and adheres to linting rules. We use **Biome** for linting and formatting.
+    npm test
+    
+    For end-to-end tests, use:
     bash
-npm run lint
+    # Example for E2E testing (adjust command as per project setup)
+    npx playwright test
+    
 
-
-5.  **Commit Your Changes:** Commit your changes with clear and concise messages. Follow the [Conventional Commits](https://www.conventionalcommits.org/) specification.
+7.  **Lint and Format:** Ensure your code adheres to the project's coding standards:
     bash
-git commit -m "feat: add new summarization algorithm"
+    npm run lint
+    npm run format
+    
 
-
-6.  **Push Your Branch:** Push your branch to your fork.
+8.  **Commit Your Changes:** Write clear and concise commit messages.
     bash
-git push origin feature/your-feature-name
+    git commit -m "feat: Add new summarization algorithm"
+    # or
+    git commit -m "fix: Resolve video playback issue on Android"
+    
 
+9.  **Push to Your Fork:** Push your branch to your fork:
+    bash
+    git push origin feat/your-feature-name
+    
 
-7.  **Open a Pull Request:** Create a Pull Request from your branch to the `main` branch of the `chirag127/VideoSum-AI-Powered-Video-Summarization-Mobile-Platform` repository.
-    *   Provide a clear title and description for your PR.
+10. **Open a Pull Request:** Create a Pull Request from your branch to the `main` branch of the `chirag127/VideoSum-AI-Video-Summarizer-Mobile-App` repository.
+
+    *   Provide a clear description of your changes.
     *   Reference any relevant issues.
-    *   Ensure all checks in the CI pipeline pass.
+    *   Ensure your PR passes all CI checks.
 
-## Coding Standards & Best Practices
+## 3. Project Standards & Guidelines
 
-*   **TypeScript (Strict Mode):** Write clean, type-safe TypeScript. Enable strict mode (`strict: true` in `tsconfig.json`).
-*   **Vite:** Utilize Vite for efficient bundling and development server.
-*   **TailwindCSS v4:** Use TailwindCSS for styling. Adhere to its utility-first principles.
-*   **Tauri v2:** If applicable for desktop builds, ensure adherence to Tauri guidelines.
-*   **Biome:** Use Biome for linting and formatting. Ensure your code passes Biome checks (`npm run lint`).
-*   **Vitest:** Write comprehensive unit tests for your components and logic.
-*   **Playwright:** Implement end-to-end tests for critical user flows.
-*   **Feature-Sliced Design (FSD):** While primarily a frontend architecture pattern, aim for modularity and clear separation of concerns in your code structure.
-*   **SOLID Principles:** Apply SOLID principles (Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion) where applicable.
-*   **DRY (Don't Repeat Yourself):** Avoid redundant code.
-*   **YAGNI (You Ain't Gonna Need It):** Only implement what is currently required.
+*   **Architecture:** We follow a Feature-Sliced Design (FSD) pattern where applicable for modularity. The core application logic should be separated from UI components and external services.
+*   **TypeScript:** Use TypeScript with strict type checking (`strict: true` in `tsconfig.json`).
+*   **React Native & Expo:** Leverage the Expo ecosystem for streamlined development and deployment.
+*   **Testing:** Write comprehensive unit and integration tests using Vitest. End-to-end tests should be implemented using Playwright for cross-platform validation.
+*   **Linting & Formatting:** Biome is used for linting and formatting to ensure code quality and consistency.
+*   **AI Integration:** All interactions with AI models (e.g., summarization APIs) must be robust, handle potential errors gracefully, and follow security best practices.
+*   **Documentation:** Keep code well-documented, especially complex algorithms or API interactions. Update relevant parts of the `README.md` and `AGENTS.md` if your changes impact them.
 
-## AI Agent Directives
+## 4. Pull Request Process
 
-This project is designed to be understood and maintained by AI agents. For detailed directives on the tech stack, architectural patterns, and verification commands, please refer to the **AGENTS.md** file.
+*   **Review:** All Pull Requests will be reviewed by at least one maintainer.
+*   **CI Checks:** Ensure all automated checks (CI, linting, testing) pass before submitting a PR.
+*   **Responsiveness:** Respond to feedback from reviewers promptly.
 
-## Reporting Issues
+## 5. Getting Help
 
-If you encounter a bug or have a feature request, please check if a similar issue already exists. If not, open a new issue with a detailed description, steps to reproduce, and relevant environment information.
+If you have questions or need clarification on any of the contribution guidelines, please open an issue in the repository.
 
-## Code of Conduct
-
-We are committed to fostering an inclusive and welcoming environment. Please adhere to our [Code of Conduct](https://github.com/chirag127/VideoSum-AI-Powered-Video-Summarization-Mobile-Platform/blob/main/CODE_OF_CONDUCT.md) (if applicable, otherwise omit or generate one).
-
-## License
-
-By contributing to this project, you agree that your contributions will be licensed under the **CC BY-NC** license.
-
-Thank you again for your interest in contributing!
+We look forward to your contributions!
