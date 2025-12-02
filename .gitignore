@@ -1,75 +1,56 @@
-# Node.js
-node_modules/
+# General
+.DS_Store
+
+# Node.js / npm / yarn
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.pnpm-store/
-pnpm-debug.log*
+node_modules/
+.pnp
+.pnp.js
 
-# Expo
-.expo/
-web-build/
+# Yarn
+.yarn/cache
+.yarn/install-state.gz
+
+# Build output
 dist/
-
-# Android
-android/.gradle
-android/build/
-android/app/build/
-android/.idea/
-android/*.iml
-android/local.properties
-android/gradlew
-android/gradlew.bat
-android/gradle/wrapper/gradle-wrapper.jar
-
-# iOS
-ios/build/
-ios/*.xcworkspace/
-ios/*.xcuserdatad/
-ios/*.mode1v3
-ios/*.schememanagement
-ios/*.swiftpm/
-ios/.xcode.env.local
-ios/.xcode.env
-DerivedData/
-*.xcarchive
-*.ipa
-*.app
-
-# macOS
-.DS_Store
+build/
+out/
 
 # Environment variables
 .env
-.env.*
-!.env.example # Keep example for documentation and structure
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
-# General build outputs and caches
-coverage/
+# Log files
 *.log
-*.bak
-*.swp
-*.swo
-*.tgz
-temp/
-build/
+npm-log.log
 
-# IDE files
-.idea/
-.vscode/
-*.sublime-project
-*.sublime-workspace
-*.creator
-*.user
+# OS Generated files
+.DS_Store
+Thumbs.db
+
+# Expo specific
+.expo/
+*.jks
+*.keystore
 
 # React Native specific
-/ios/Pods/
-/ios/.xccurrentuser
-/ios/Podfile.lock
+android/app/build
+android/build
+android/captures
+*.iml
+ios/build
+ios/Pods
 
-# Bundler and Asset Caches
-.yarn-cache/
-.bun/
-.parcel-cache/
-.hasha-cache/
-/bundle/
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
