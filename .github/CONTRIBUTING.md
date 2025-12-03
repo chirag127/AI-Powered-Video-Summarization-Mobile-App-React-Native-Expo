@@ -1,115 +1,121 @@
-# Contributing to VideoSum-AI-Video-Summarizer-Mobile-App
+# Contributing to VideoSum-AI-Smart-Video-Summarizer-Mobile-App
 
-Thank you for your interest in contributing to VideoSum-AI-Video-Summarizer-Mobile-App! We welcome your contributions to help us improve this AI-powered mobile application.
+Thank you for considering contributing to the VideoSum-AI-Smart-Video-Summarizer-Mobile-App project! We welcome your contributions, whether it's bug reports, feature requests, code submissions, or documentation improvements.
 
-## 1. Code of Conduct
+## Code of Conduct
 
-This project adheres to the Contributor Covenant Code of Conduct. By participating, you are expected to uphold this code. Please report unacceptable behavior to `chirag127@example.com`.
+This project adheres to the Contributor Covenant Code of Conduct. By participating, you are expected to uphold this code. Please report any violations to `chirag127@example.com`.
 
-## 2. How to Contribute
+## How to Contribute
 
-We welcome contributions in the form of bug reports, feature requests, code improvements, and documentation updates.
+### 1. Reporting Bugs
 
-### 2.1 Reporting Bugs
+*   **Search:** Before reporting a bug, please check if it has already been reported.
+*   **Detail:** If not, open a new issue. Provide a clear and concise description of the bug.
+*   **Steps to Reproduce:** Include detailed steps to reproduce the behavior.
+*   **Environment:** Specify your operating system, device, React Native version, Expo version, and any relevant dependencies.
+*   **Screenshots/Videos:** If possible, include screenshots or videos to illustrate the problem.
+*   **Use Template:** Use the `bug_report.md` issue template.
 
-When reporting a bug, please provide as much detail as possible:
+### 2. Suggesting Enhancements
 
-*   **Version:** The version of the app you are using.
-*   **Device & OS:** Your device model and operating system version (e.g., iPhone 14 Pro, iOS 17.2; Samsung Galaxy S23, Android 14).
-*   **Steps to Reproduce:** Clear, concise steps to reproduce the problem.
-*   **Expected Behavior:** What you expected to happen.
-*   **Actual Behavior:** What actually happened.
-*   **Screenshots/Videos:** If applicable, attach screenshots or screen recordings.
-*   **Logs:** Any relevant error messages or console logs.
+*   **Search:** Check if your idea has already been suggested.
+*   **Detail:** Open a new issue with a clear description of the feature and why it would be valuable.
+*   **Use Template:** Use the `feature_request.md` issue template (if available).
 
-Use the provided issue templates for bug reports.
+### 3. Pull Requests
 
-### 2.2 Suggesting Enhancements
+We appreciate contributions via pull requests! Follow these steps:
 
-If you have an idea for a new feature or an improvement, please:
-
-1.  **Check Existing Issues:** See if a similar feature request already exists.
-2.  **Open a New Issue:** If not, create a new issue describing your suggestion. Be specific about the problem it solves and the proposed solution.
-
-### 2.3 Contributing Code
-
-We appreciate code contributions! Here's the general workflow:
-
-1.  **Fork the Repository:** Create a fork of `https://github.com/chirag127/VideoSum-AI-Video-Summarizer-Mobile-App`.
-2.  **Clone Your Fork:** Clone your forked repository to your local machine:
+1.  **Fork the Repository:** Create your own fork of the `chirag127/VideoSum-AI-Smart-Video-Summarizer-Mobile-App` repository.
+2.  **Clone Your Fork:** `git clone https://github.com/YOUR_USERNAME/VideoSum-AI-Smart-Video-Summarizer-Mobile-App.git`
+3.  **Create a Branch:** Create a descriptive branch for your changes: `git checkout -b feature/your-feature-name` or `bugfix/your-bug-fix`.
+4.  **Install Dependencies:** Ensure you have the necessary dependencies installed:
     bash
-    git clone https://github.com/chirag127/VideoSum-AI-Video-Summarizer-Mobile-App.git
-    cd VideoSum-AI-Video-Summarizer-Mobile-App
-    
-3.  **Set Up Development Environment:**
-    *   Ensure you have Node.js and Expo CLI installed.
-    *   Install dependencies:
-        bash
-        npm install
-        
-    *   Refer to the `README.md` for detailed setup instructions and available scripts.
-
-4.  **Create a New Branch:** Create a descriptive branch for your changes:
-    bash
-    git checkout -b feat/your-feature-name
+    npx expo install
     # or
-    git checkout -b fix/your-bug-fix
+    yarn install
     
-
-5.  **Make Your Changes:** Implement your feature or fix.
-
-6.  **Test Your Changes:** Ensure all tests pass. Run the full test suite using:
+5.  **Make Changes:** Implement your feature or fix your bug.
+6.  **Test Your Changes:** Run tests to ensure your changes don't break existing functionality:
     bash
-    npm test
+    npx jest --ci
+    # or
+    yarn test --ci
     
-    For end-to-end tests, use:
-    bash
-    # Example for E2E testing (adjust command as per project setup)
-    npx playwright test
-    
-
+    Ensure all tests pass. If adding new functionality, consider adding new tests.
 7.  **Lint and Format:** Ensure your code adheres to the project's coding standards:
     bash
-    npm run lint
-    npm run format
+    npx biome lint --apply
+    npx biome format --write
+    # or if using ESLint/Prettier
+    yarn lint --fix
+    yarn format
     
-
-8.  **Commit Your Changes:** Write clear and concise commit messages.
+8.  **Commit Your Changes:** Write clear, concise commit messages. Follow conventional commits if applicable.
     bash
-    git commit -m "feat: Add new summarization algorithm"
+    git add .
+    git commit -m "feat: Add awesome new feature"
+    
+9.  **Push to Your Fork:** `git push origin feature/your-feature-name`
+10. **Open a Pull Request:** Navigate to the original repository (`https://github.com/chirag127/VideoSum-AI-Smart-Video-Summarizer-Mobile-App`) and open a new pull request from your feature branch.
+    *   **Title:** Provide a clear title for your PR.
+    *   **Description:** Explain what your changes do, why they are necessary, and how you tested them.
+    *   **Link Issues:** Reference any related issues (e.g., `Closes #123`).
+
+### 4. Development Environment Setup
+
+To set up the project locally for development, follow these steps:
+
+1.  **Clone the repository:**
+    bash
+    git clone https://github.com/chirag127/VideoSum-AI-Smart-Video-Summarizer-Mobile-App.git
+    cd VideoSum-AI-Smart-Video-Summarizer-Mobile-App
+    
+2.  **Install Node.js and npm/yarn:** Ensure you have Node.js (v18+) and a package manager (npm or Yarn) installed.
+3.  **Install Project Dependencies:**
+    bash
+    npm install
     # or
-    git commit -m "fix: Resolve video playback issue on Android"
+    yarn install
     
-
-9.  **Push to Your Fork:** Push your branch to your fork:
+4.  **Install Expo Go (Mobile App):** Download the Expo Go app on your physical iOS or Android device from the respective app store.
+5.  **Run the Development Server:**
     bash
-    git push origin feat/your-feature-name
+    npx expo start
+    # or
+    yarn start
     
+    This will start the Metro bundler and display a QR code. Scan this QR code using the Expo Go app on your device to run the application.
 
-10. **Open a Pull Request:** Create a Pull Request from your branch to the `main` branch of the `chirag127/VideoSum-AI-Video-Summarizer-Mobile-App` repository.
+### 5. Project Structure and Architecture
 
-    *   Provide a clear description of your changes.
-    *   Reference any relevant issues.
-    *   Ensure your PR passes all CI checks.
+This project follows a modular architecture, leveraging React Native and Expo for cross-platform development.
 
-## 3. Project Standards & Guidelines
+*   **`src/`**: Contains the core application logic.
+    *   **`components/`**: Reusable UI components.
+    *   **`screens/`**: Application screens.
+    *   **`services/`**: API interactions and business logic.
+    *   **`utils/`**: Helper functions.
+    *   **`navigation/`**: Navigation setup.
+*   **`assets/`**: Static assets like images and fonts.
+*   **`constants/`**: Application-wide constants.
 
-*   **Architecture:** We follow a Feature-Sliced Design (FSD) pattern where applicable for modularity. The core application logic should be separated from UI components and external services.
-*   **TypeScript:** Use TypeScript with strict type checking (`strict: true` in `tsconfig.json`).
-*   **React Native & Expo:** Leverage the Expo ecosystem for streamlined development and deployment.
-*   **Testing:** Write comprehensive unit and integration tests using Vitest. End-to-end tests should be implemented using Playwright for cross-platform validation.
-*   **Linting & Formatting:** Biome is used for linting and formatting to ensure code quality and consistency.
-*   **AI Integration:** All interactions with AI models (e.g., summarization APIs) must be robust, handle potential errors gracefully, and follow security best practices.
-*   **Documentation:** Keep code well-documented, especially complex algorithms or API interactions. Update relevant parts of the `README.md` and `AGENTS.md` if your changes impact them.
+**AI Integration:** Key AI functionalities, such as video summarization, are handled by dedicated modules within the `services/` directory, interacting with external AI APIs.
 
-## 4. Pull Request Process
+## Guidelines & Principles
 
-*   **Review:** All Pull Requests will be reviewed by at least one maintainer.
-*   **CI Checks:** Ensure all automated checks (CI, linting, testing) pass before submitting a PR.
-*   **Responsiveness:** Respond to feedback from reviewers promptly.
+*   **SOLID Principles:** Strive to apply SOLID principles in your code.
+*   **DRY (Don't Repeat Yourself):** Avoid redundant code. Abstract common logic into reusable functions or components.
+*   **YAGNI (You Ain't Gonna Need It):** Implement only what is necessary now. Avoid over-engineering.
+*   **TypeScript First:** Utilize TypeScript for strong typing and improved code maintainability.
+*   **Testing:** Write comprehensive unit and integration tests for new features and bug fixes.
+*   **Code Reviews:** All pull requests will undergo a code review process. Be open to feedback and suggestions.
 
-## 5. Getting Help
+## Submitting an Issue
 
-If you have questions or need clarification on any of the contribution guidelines, please open an issue in the repository.
+When submitting an issue, please use the provided issue templates (`bug_report.md`, `feature_request.md`). Ensure your issue is well-documented and provides sufficient information for us to understand and resolve it.
 
-We look forward to your contributions!
+## Thank You!
+
+Your contributions help make `VideoSum-AI-Smart-Video-Summarizer-Mobile-App` better for everyone. We look forward to your contributions!
