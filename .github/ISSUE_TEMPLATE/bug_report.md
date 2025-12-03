@@ -1,35 +1,46 @@
 # Bug Report
 
-## Please provide as much detail as possible about the bug.
+**Project:** VideoSum-AI-Smart-Video-Summarizer-Mobile-App
 
-### 1. What is the expected behavior?
+**Date Reported:** {{date:YYYY-MM-DD}}
+
+## 1. Summary
+
+A concise, one-sentence description of the bug.
+
+## 2. Environment
+
+*   **App Version:** (e.g., 1.0.0, specify build if applicable)
+*   **Operating System:** (e.g., iOS 17.2, Android 14)
+*   **Device:** (e.g., iPhone 15 Pro, Samsung Galaxy S23)
+*   **React Native Version:** (If known/relevant)
+*   **Expo Version:** (If known/relevant)
+
+## 3. Steps to Reproduce
+
+1.  Navigate to [Screen/Feature Name]
+2.  Perform [Action A]
+3.  Perform [Action B]
+4.  Observe [Unexpected Behavior]
+
+## 4. Expected Behavior
 
 Describe what you expected to happen.
 
-### 2. What is the actual behavior?
+## 5. Actual Behavior
 
-Describe what actually happened. Please include any error messages or stack traces.
+Describe what actually happened. Include any error messages or unexpected UI states.
 
-### 3. Steps to reproduce
+## 6. Screenshots/Recordings
 
-Provide a clear, step-by-step list of instructions that will lead to the bug. If possible, include the exact video(s) or input that triggered the bug.
+If possible, include screenshots or a short video recording demonstrating the bug.
 
-1. Go to `...`
-2. Click `...`
-3. Observe `...`
+## 7. Additional Context
 
-### 4. Environment
+Any other information that might be helpful in diagnosing the problem (e.g., network conditions, specific video file used, user actions leading up to the bug).
 
-*   **App Version:** (e.g., `v1.2.3` or specific commit hash)
-*   **Device:** (e.g., iPhone 15 Pro, Samsung Galaxy S24)
-*   **OS:** (e.g., iOS 17.2, Android 14)
-*   **Expo Go / Development Build:** (Specify if using Expo Go or a development build)
+## 8. AI Agent Directives Compliance
 
-### 5. Additional Information
-
-Any other context about the problem. Screenshots, recordings, or logs are highly appreciated.
-
---- 
-
-**Repository:** `https://github.com/chirag127/VideoSum-AI-Video-Summarizer-Mobile-App`
-**AI Agent Directives:** (See `AGENTS.md` for details on architectural principles, tech stack, and verification commands.)
+*   **System Check:** Confirm that all core AI Agent Directives (from `AGENTS.md`) are being adhered to, or specify where a deviation is suspected.
+*   **Data Integrity:** Is the AI processing producing anomalous or corrupted summary data?
+*   **Model Performance:** Are there observed performance degradations in the AI summarization model?
